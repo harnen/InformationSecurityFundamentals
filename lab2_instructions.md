@@ -1,20 +1,25 @@
 # Week 2 - Malware and Buffer Overflow
+In this tutorial you'll work on exploiting a buffer overflow vulnerability. This can attack can crash a legitimate process, give the attacker access to confidential data or even give the attacker a full control over a machine (see Challange3). 
 
-## Challenge 1
-
+## Setup
 Disable ALSR on your machine using `echo 0 | tee /proc/sys/kernel/randomize_va_space`
 
-Compile `challenge1.c` using `gcc challenge1.c -o challenge1 -m32 -fno-stack-protector -z execstack -g`
+## Challenge 1
+Your goal here is to modify a variable in the code even though the code doesn't contain any logic writing to this variable. To do that
 
-Run the file with an input that will change the value of modified to something other than 0.
+* Analyze the code in `challenge1.c`
 
-Add a `printf` statements to your code that will print the pointer values for buffer and modified variables.
+* Compile `challenge1.c` using `gcc challenge1.c -o challenge1 -m32 -fno-stack-protector -z execstack -g`
 
-Run the program several times and observe the pointer values.
+* Run the file with an input that will change the value of `do_not_modify` to something other than 0.
 
-Recompile the program without the `-fno-stack-protector`. What changed? Is your attack still possible?
+* Add a `printf` statements to your code that will print the pointer values for buffer and modified variables.
 
-Enable ALSR on your machine and run the program again (modify the command from the beginning of this task). What changed? How ALSR protects against buffer overflow attacks? 
+* Run the program several times and observe the pointer values.
+
+* Recompile the program without the `-fno-stack-protector`. What changed? Is your attack still possible?
+
+* Enable ALSR on your machine and run the program again (modify the command from the beginning of this task). What changed? How ALSR protects against buffer overflow attacks? 
 
 ```
 ./challenge1 aaaaaaaaa
