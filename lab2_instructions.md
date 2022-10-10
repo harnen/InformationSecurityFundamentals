@@ -1,5 +1,5 @@
 # Week 2 - Malware and Buffer Overflow
-In this tutorial you'll work on exploiting a buffer overflow vulnerability. This can attack can crash a legitimate process, give the attacker access to confidential data or even give the attacker a full control over a machine (see Challange3). 
+In this tutorial you'll work on exploiting a buffer overflow vulnerability. This attack can crash a legitimate process, give the attacker access to confidential data or even give the attacker a full control over a machine (see Challange3). 
 
 ## Setup
 Disable ALSR on your machine using `echo 0 | tee /proc/sys/kernel/randomize_va_space`
