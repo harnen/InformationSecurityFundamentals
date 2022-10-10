@@ -2,6 +2,8 @@
 In this tutorial you'll work on exploiting a buffer overflow vulnerability. This attack can crash a legitimate process, give the attacker access to confidential data or even give the attacker a full control over a machine (see Challange3). 
 
 ## Setup
+Connect to the Ubuntu server and start the tutorial image by invoking `sudo /usr/local/bin/start_lab.sh 2`
+
 Disable ALSR on your machine using `echo 0 | tee /proc/sys/kernel/randomize_va_space`.
 
 ## Challenge 1
